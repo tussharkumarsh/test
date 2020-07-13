@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dumb-component',
@@ -6,9 +6,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./dumb-component.component.css'],
 })
 export class DumbComponentComponent implements OnInit {
-  @Input() users = [];
+  @Output() onTdClick: EventEmitter<any> = new EventEmitter<any>();
+
+  @Input() user;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onNameClick(name) {
+    this.onTdClick.emit(name);
+  }
 }

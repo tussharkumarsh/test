@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  constructor() {}
   users = [
     {
       id: 1,
@@ -239,8 +240,10 @@ export class AppComponent {
     },
   ];
 
-  filteredUsers = this.users;
-  ngOnInit() {}
+  filteredUsers = [];
+  ngOnInit() {
+    this.filteredUsers = this.users;
+  }
 
   filterFirst() {
     this.filteredUsers = this.users.filter((el) => el.id <= 5);
@@ -248,5 +251,9 @@ export class AppComponent {
 
   filterLast() {
     this.filteredUsers = this.users.filter((el) => el.id > 5);
+  }
+
+  onEvent(e) {
+    console.log(e);
   }
 }

@@ -1,4 +1,11 @@
-<app-dumb-component [users]="filteredUsers"></app-dumb-component>
+<table>
+  <tr *ngFor="let user of filteredUsers">
+    <app-dumb-component
+      [user]="user"
+      (onTdClick)="onEvent($event)"
+    ></app-dumb-component>
+  </tr>
+</table>
 
 <button (click)="filterFirst()">First Five</button>
 <button (click)="filterLast()">Last Five</button>
