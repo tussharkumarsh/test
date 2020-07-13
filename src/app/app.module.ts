@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DumbComponentComponent } from './dumb-component/dumb-component.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DumbComponentComponent],
   imports: [BrowserModule, AppRoutingModule],
-  exports: [],
+  exports: [DumbComponentComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

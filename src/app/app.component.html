@@ -1,6 +1,4 @@
-<div class="app">
-  <h1 [innerHTML]="title">"title"</h1>
-  <h1>{{ title }}</h1>
-  <input type="text" [value]="name" />
-  <div>{{ name }}</div>
-</div>
+<app-dumb-component [users]="filteredUsers"></app-dumb-component>
+
+<button (click)="filterFirst()">First Five</button>
+<button (click)="filterLast()">Last Five</button>
